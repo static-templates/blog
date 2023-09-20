@@ -1,0 +1,79 @@
+<layout title="Static Starter Template" src="main.html">
+    
+    <include src="top-bar.html"></include>
+
+    <main>
+        <include src="header-home.html"></include>
+        <div class="container px-5 mx-auto text-slate-900">
+            <ForEach content="posts" as="post" orderBy="date" count="3">
+
+                <If condition="loop == 1">
+                    <article>
+                        <div class="mb-8 md:mb-16">
+                            <a href="{post.link}" class="block">
+                                <img src="{post.coverImage}" class="transition-shadow duration-200 shadow-sm hover:shadow-md" alt="Cover Image for Dynamic Routing and Static Generation">
+                            </a>
+                        </div>
+                        <div class="mb-20 md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 md:mb-28">
+                            <div>
+                                <h3 class="mb-4 text-4xl font-semibold leading-tight lg:text-5xl"><a class="hover:underline" href="{post.link}">{post.title}</a></h3>
+                                <div class="mb-4 text-lg md:mb-0"><time datetime="{post.date}">{post.dateFormatted}</time></div>
+                            </div>
+                            <div>
+                                <p class="mb-4 text-lg leading-relaxed">{post.excerpt}</p>
+                                <div class="flex items-center">
+                                    <img src="{post.authorPicture}" class="w-12 h-12 mr-4 rounded-full" alt="{post.authorName}" />
+                                    <div class="text-xl font-bold">{post.authorName}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </If>
+
+                <If condition="loop==2">
+                    <section>
+                        <h2 class="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">More Stories</h2>
+                        <div class="grid grid-cols-1 mb-32 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32">
+                            <article>
+                                <div class="mb-5">
+                                    <a href="{post.link}">    
+                                        <img alt="{post.title}" src="{post.coverImage}" class="transition-shadow duration-200 shadow-sm hover:shadow-md">
+                                    </a>
+                                </div>
+                                <h3 class="mb-3 text-3xl font-medium leading-snug">
+                                    <a class="hover:underline" href="{post.link}">{post.title}</a>
+                                </h3>
+                                <div class="mb-4 text-lg"><time datetime="{post.date}">{post.dateFormatted}</time></div>
+                                <p class="mb-4 text-lg leading-relaxed">{post.excerpt}</p>
+                                <div class="flex items-center">
+                                    <img src="{post.authorPicture}" class="w-12 h-12 mr-4 rounded-full" alt="{post.authorName}">
+                                    <div class="text-xl font-bold">{post.authorName}</div>
+                                </div>
+                            </article>
+                </If>
+                <If condition="loop==3">
+                            <article>
+                                <div class="mb-5">
+                                    <a href="{post.link}">
+                                        <img alt="{post.title}" src="{post.coverImage}" class="transition-shadow duration-200 shadow-sm hover:shadow-md" />
+                                    </a>
+                                </div>
+                                <h3 class="mb-3 text-3xl font-medium leading-snug">
+                                    <a class="hover:underline" href="{post.link}">{post.title}</a>
+                                </h3>
+                                <div class="mb-4 text-lg"><time datetime="{post.date}">{post.dateFormatted}</time></div>
+                                <p class="mb-4 text-lg leading-relaxed">{post.excerpt}</p>
+                                <div class="flex items-center">
+                                    <img src="{post.authorPicture}" class="w-12 h-12 mr-4 rounded-full" alt="{post.authorName}">
+                                    <div class="text-xl font-bold">{post.authorName}</div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </If>
+
+            </ForEach>
+        </div>
+    </main>
+
+</layout>
