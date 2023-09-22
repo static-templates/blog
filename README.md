@@ -9,3 +9,7 @@ You can install this theme with the [static](https://www.npmjs.com/package/@devd
 ```
 static new folder-name --template=blog
 ```
+
+## Credits
+
+This template was inspired by the [Vercel Blog Starter Template](https://vercel.com/templates/next.js/blog-starter-kit)
