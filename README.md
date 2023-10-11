@@ -7,7 +7,7 @@ This is a blog starter template for [Static](https://static.devdojo.com).
 You can install this theme with the [static](https://www.npmjs.com/package/@devdojo/static) new command like so:
 
 ```
-static new folder-name --template=blog
+static new folder-name --blog
 ```
 
 ## Credits
